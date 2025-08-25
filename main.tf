@@ -44,7 +44,7 @@ resource "aws_route_table_association" "rta" {
 resource "aws_security_group" "web_sg" {
   name        = "web-sg"
   description = "Allow SSH and HTTP"
-  vpc_id      = aws_vpc.main.id   # << required here!
+  vpc_id      = aws_vpc.main.id 
 
   ingress {
     from_port   = 22
@@ -88,4 +88,5 @@ resource "aws_instance" "web_server" {
 
   tags = { Name = "Terraform-Web-Server" }
 }
+
 
