@@ -3,13 +3,13 @@ provider "aws" {
 }
 
 
-# Create a VPC
+# Create VPC
 resource "aws_vpc" "main" {
   cidr_block = "10.0.0.0/16"
   tags = { Name = "main-vpc" }
 }
 
-# Create a subnet
+# Create subnet
 resource "aws_subnet" "public_subnet" {
   vpc_id                  = aws_vpc.main.id
   cidr_block              = "10.0.1.0/24"
@@ -88,5 +88,6 @@ resource "aws_instance" "web_server" {
 
   tags = { Name = "Terraform-Web-Server" }
 }
+
 
 
